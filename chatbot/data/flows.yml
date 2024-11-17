@@ -1,0 +1,196 @@
+flows:
+  greeting:
+    description: الترحيب بالمستخدم
+    name: greeting
+    steps: 
+      - action: utter_greet
+      - action: action_restart
+
+  tsgel_moz:
+    description: .سؤال عن موعد بدء أو انتهاء تسجيل الموازي(المدفوع) في الجامعة
+    name: موعد  أو وقت التسجيل الموازي  
+    steps:
+      - action: action_tsgel_moz
+
+  tsgel_gen:
+    description: .سؤال عن موعد بدء أو انتهاء تسجيل العام(الغير مدفوع) في الجامعة
+    name: موعد أو وقت التسجيل العام
+    steps:
+      - action: action_tsgel_gen
+
+  tsgel_gen_pep: 
+    description: .سؤال عن الأوراق المطلوبة للتسجيل العام (الغير مدفوع)
+    name:  أوراق التسجيل العام
+    steps:
+      - action: action_tsgel_gen_pep
+
+  tsgel_moz_pep:
+    description: .سؤال عن الاوراق المطلوبة للتسجيل الموازي (المدفوع)
+    name: أوراق التسجيل الموازي
+    steps:
+      - action: action_tsgel_moz_pep
+
+
+
+#################################################
+
+
+  # tsgel_moz_incu:
+  # description: سؤال عن موعد بدء او انتهاء تثبيت التسجيل (عن طريق الدفع) في الجامعة
+  # name: موعد التسجيل الموازي
+  # steps:
+  #   - action: action_tsgel_moz
+
+  tsgel_sakan_new_students:
+    description: .سؤال عن موعد بدء أو انتهاء التسجيل  للطلاب الحديثين على السكن الطلابي في جامعة دمشق
+    name:  موعد تسجيل السكن للطلاب الحديثين
+    steps:
+      - action: action_tsgel_sakan_new_students
+
+  tsgel_sakan_old_students:
+    description: .سؤال عن موعد بدء أو انتهاء التسجيل للطلاب القديمين(القاطنين) على السكن الطلابي في جامعة دمشق
+    name: موعد تسجيل السكن للطلاب القديمين
+    steps:
+      - action: action_tsgel_sakan_old_students
+
+  tsgel_sakan_pep_new_students: 
+    description:  .سؤال عن أوراق المطلوبة للتسجيل على السكن الجامعي للطلاب الحديثين
+    name: أوراق تسجيل السكن للطلاب الحديثين
+    steps:
+      - action: action_tsgel_sakan_pep_new_students
+
+  tsgel_sakan_pep_old_students: 
+    description:  .سؤال عن الأوراق المطلوبة للتسجيل على السكن الجامعي للطلاب القديمين
+    name: أوراق تسجيل السكن للطلاب القديمين
+    steps:
+      - action: action_tsgel_sakan_pep_old_students
+
+  tsgel_trade:
+    description: .سؤال عن موعد صدور قوائم التسجيل المباشر للطلاب الأوائل في الباكالوريوس المهني
+    name: موعد صدور قوائم تسجيل الأول المهني
+    steps:
+      - action: action_tsgel_trade
+
+  #المفاضلة الثانية
+  # tsgel_live:
+  #   description:  سؤال عن موعد بدء او انتهاء تسجيل المباشر في الجامعة
+  #   name: التسجيل المباشر
+  #   steps:
+  #     - action: action_tsgel_live
+
+  tsgel_gen_sy_no:
+    description: .سؤال عن موعد بدء أو انتهاء التسجيل للطالب السوري غير المقيم في القطر العربي السوري
+    name: موعد التسجيل للطالب السوري غير المقيم 
+    steps:
+      - action: action_tsgel_sy_no
+
+  tsgel_stop_pep:
+    description: .سؤال عن الأوراق المطلوبة لأيقاف التسجيل في الجامعة (بشكل مؤقت)
+    name: الأوراق المطلوبة لأيقاف التسجيل في الجامعة
+    steps:
+      - action: action_tsgel_stop_pep
+
+  cancel_tsgel_stop_pep:
+    description: .سؤال عن الأوراق المطلوبة لالغاء ايقاف التسجيل في الجامعة 
+    name: الأوراق المطلوبة لالغاء ايقاف التسجيل في الجامعة 
+    steps:
+      - action: action_cancel_tsgel_stop_pep
+
+  tasgel_graduation_document_pep:
+    description: .سؤال عن الأوراق المطلوبة لإصدار وثيقة التخرج 
+    name: الأوراق المطلوبة لإصدار وثيقة التخرج 
+    steps:
+      - action: action_tasgel_graduation_document_pep
+
+  release_card_instead_of_damaged_pep:
+    description: .سؤال عن الأوراق المطلوبة لإصدار بطاقة بدل تالف في الجامعة
+    name: الأوراق المطلوبة لإصدار بطاقة بدل تالف
+    steps:
+      - action: action_release_card_instead_of_damaged_pep
+
+  
+  protest_on_mark_pep:
+    description: .سؤال عن الأوراق المطلوبة للاعتراض على علامة العملي أو النظري
+    name: الأوراق المطلوبة للاعتراض على علامة
+    steps:
+      - action: action_protest_on_mark_pep
+  
+  statement_on_university_life_pep:
+    description: .سؤال عن الأوراق المطلوبة لإصدار حياة جامعية
+    name: الأوراق المطلوبة لإصدار حياة جامعية
+    steps:
+      - action: action_statement_on_university_life_pep
+
+  university_card_instead_of_lost_pep:
+    description: .سؤال عن الأوراق المطلوبة لإصدار بطاقة جامعية بدل ضائع 
+    name: الأوراق المطلوبة لإصدار بطاقة جامعية بدل ضائع
+    steps:
+      - action: action_university_card_instead_of_lost_pep
+
+  symmetric_transformation_pep:
+    description: .سؤال عن الأوراق المطلوبة للتحويل المتماثل 
+    name: أوراق التحويل المتماثل
+    steps:
+      - action: action_symmetric_transformation_pep
+
+  asymmetric_transformation_pep:
+    description: .سؤال عن الأوراق المطلوبة للتحويل الغير متماثل 
+    name: أوراق التحويل الغير متماثل
+    steps:
+      - action: action_asymmetric_transformation_pep
+
+  Ph_link:
+    description: .طلب رابط مجموعة (غروب) مادة الفيزياء على منصة الفيسبوك أو التلغرام
+    name : رابط الفيزياء
+    steps:
+      - action: action_Ph_link
+
+  circut_link:
+    description: .طلب رابط مجموعة (غروب) مادة الدارات الكهربائية على منصة الفيسبوك أو التلغرام
+    name : رابط الدارات الكهربائية
+    steps:
+      - action: action_circut_link
+
+################################
+
+  Rbcs_arc_link:
+    description: .طلب رابط الأرشيف (السنوات السابقة) لفريق الكريات الحمراء (الاربسيز Rbcs )
+    name : رابط ارشيف الاربسيز
+    steps:
+      - action: action_Rbcs_arc_link
+
+# في لاكتر من حدا
+  tele_group_link:
+    description: .طلب رابط مجموعة تلغرام
+    name : رابط التلغرام لطلاب 
+    steps:
+      - action: action_tele_group_link
+
+  # stud_loan:
+  #   description: الاسئلة والاستفسارات حول القروض الطلابية (الاوراق ,الاجراءات, الشروط)
+  #   name : القرض الطلابي
+  #   steps:
+  #     - action: action_trigger_search
+
+# في اسئلة عن دوام العملي و النظري وشغلات الها علاقة بالسنة الاولى
+  doam_start_date:
+    description: .سؤال عن موعد بدء الدوام الجامعي لكافة السنوات الدراسية
+    name : موعد بدء الدوام الجامعي
+    steps:
+      - action: action_doam_start_date
+
+  uni_office_work:
+    description: .سؤال عن أوقات  بدء الدوام في المكاتب الادارية في الجامعة (الشؤون الطلابية , المكتبة , غرفة المطالعة ,النافذة الواحدة , شعبة الامتحانات ,مخابر الانترنت)
+    name : اوقات بدء الدوام (الشؤون الطلابية , المكتبة , غرفة المطالعة ,النافذة الواحدة , شعبة الامتحانات ,مخابر الانترنت)
+    steps:
+      - action: action_uni_office_work
+
+  pep_work_loc:
+    description: .السؤال عن مكان تقديم احد المستندات التالية (اعتراض على القسم العملي او النظري لمادة دراسية)
+    name: مكان تقديم المستندات التالية (اعتراض على القسم العملي او النظري لمادة دراسية)
+    steps:
+      - action: action_pep_work_loc
+
+
+
+########################################

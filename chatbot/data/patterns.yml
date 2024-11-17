@@ -1,0 +1,23 @@
+flows:
+
+  pattern_search:
+    description: handle a knowledge-based question or request
+    name: pattern search
+    steps:
+      - action: action_trigger_search
+
+  pattern_clarification:
+    description: Conversation repair flow for handling ambiguous requests that could match multiple flows
+    name: pattern clarification
+    steps:
+      - action: action_clarify_flows
+      - action: utter_clarification_options_rasa
+
+  pattern_completed:
+    description: Flow that asks if the user needs more help after completing their initiated use cases
+    name: pattern completed
+    steps:
+      - action: action_listen
+
+
+        

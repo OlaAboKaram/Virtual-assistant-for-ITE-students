@@ -1,0 +1,54 @@
+version: "3.1"
+
+slots:
+  recipient:
+    type: text
+    mappings:
+      - type: from_llm
+
+
+
+actions:  
+  - action_tsgel_moz
+  - action_tsgel_gen
+  - action_tsgel_gen_pep
+  - action_tsgel_moz_pep
+  - action_tsgel_sakan_new_students
+  - action_tsgel_sakan_old_students
+  - action_tsgel_sakan_pep_new_students
+  - action_tsgel_sakan_pep_old_students
+  - action_tsgel_trade
+  - action_tsgel_sy_no
+  - action_tsgel_stop_pep
+  - action_cancel_tsgel_stop_pep
+  - action_tasgel_graduation_document_pep
+  - action_release_card_instead_of_damaged_pep
+  - action_protest_on_mark_pep
+  - action_statement_on_university_life_pep
+  - action_university_card_instead_of_lost_pep
+  - action_symmetric_transformation_pep
+  - action_asymmetric_transformation_pep
+  - action_Ph_link
+  - action_circut_link
+  - action_Rbcs_arc_link
+  - action_tele_group_link
+  - action_doam_start_date
+  - action_uni_office_work
+  - action_pep_work_loc
+responses:
+
+  utter_greet:
+    - text: "أهلا وسهلا بك. كيف يمكنني مساعدتك اليوم؟"
+  
+
+  utter_clarification_options_rasa:
+    - text: "يمكنني المساعدة، ولكنني بحاجة إلى مزيد من المعلومات. أي من هذه الأمور ترغب في القيام به؟: {{context.clarification_options}}?"
+      metadata:
+        rephrase: False
+        template: jinja
+  
+  utter_can_do_something_else:
+    - text: "هل هناك أي شيء آخر تحتاج إلى المساعدة فيه؟"
+
+
+
