@@ -1,0 +1,313 @@
+
+  get_link:
+    description: طلب رابط مجموعة (غروب) على منصة الفيسبوك او التلغرام
+    name : رابط مجموعة (فيزياء ,دارات كهربائية)
+    steps:
+      - collect: link_name
+        description: اسم رابط مادة جامعية (فيزياء أو دارات)
+        ask_before_filling: true
+        utter: utter_ask_link_name
+      - action: action_suitable_link
+      - action: utter_resp_link
+
+
+
+    link_name:
+    type: text
+    mappings:
+      - type: from_llm
+ 
+  resp_link:
+    type: text
+    mappings:
+      - type: custom
+        action: action_suitable_link
+
+
+
+
+
+
+
+
+
+
+##############
+
+
+  tsgel_moz_incu:
+  description: سؤال عن موعد بدء او انتهاء تثبيت التسجيل (عن طريق الدفع) في الجامعة
+  name: التسجيل الموازي
+  steps:
+    - action: utter_tsgel_moz
+
+  tsgel_hou:
+    description: سؤال عن موعد بدء او انتهاء التسجيل على السكن الطلابي في الجامعة
+    steps:
+      - action: utter_tsgel_hou
+
+  
+  tsgel_trade:
+    description: ّسؤال عن موعد صدور قوائم التسجيل المباشر للطلاب الأوائل في الباكالوريوس المهني
+    name: قوائم تسجيل أوائل المهنيّ
+    steps:
+      - action: utter_tsgel_trade
+
+  tsgel_gen_sy_no:
+    description: سؤال عن موعد بدء او انتهاء التسجيل للطالب السوري غير المقيم في القطر العربي السوري
+    steps:
+      - action: utter_tsgel_sy_no
+
+  tsgel_stop_pep:
+    description: سؤال عن الاوراق المطلوبة لأيقاف للتسجيل في الجامعة (بشكل مؤقت)
+    steps:
+      - action: utter_tsgel_stop_pep
+  
+
+  Ph_link:
+    description: طلب رابط مجموعة (غروب) مادة الفيزياء على منصة الفيسبوك او التلغرام
+    name : رابط الفيزياء
+    steps:
+      - action: utter_Ph_link
+
+  circut_link:
+    description: طلب رابط مجموعة (غروب) مادة الدارات الكهربائية على منصة الفيسبوك او التلغرام
+    name : رابط الدارات الكهربائية
+    steps:
+      - action: utter_circut_link
+
+  Rbcs_arc_link:
+    description: طلب رابط الأرشيف (السنوات السابقة) لفريق الكريات الحمراء (الاربسيز Rbcs )
+    name : رابط ارشيف الاربسيز
+    steps:
+      - action: utter_Rbcs_arc__link
+  
+  tele_group_link:
+    description: طلب رابط مجموعة التلغرام لطلاب السنة الأولى
+    name : رابط التلغرام لطلاب السنة الأولى
+    steps:
+      - action: utter_tele_group_link
+
+  stud_loan:
+    description: الاسئلة والاستفسارات حول القروض الطلابية (الاوراق ,الاجراءات, الشروط)
+    name : القرض الطلابي
+    steps:
+      - action: action_trigger_search
+
+# في اسئلة عن دوام العملي و النظري وشغلات الها علاقة بالسنة الاولى
+  doam_start_date:
+    description: سؤال عن موعد بدء الدوام الجامعي لكافة السنوات الدراسية
+    name : موعد بدء الدوام
+    steps:
+      - action: utter_doam_start_date
+
+  uni_office_work:
+    description:   سؤال عن اوقات بدء الدوام في المكاتب الادارية في الجامعة (الشؤون الطلابية , المكتبة , غرفة المطالعة ,النافذة الواحدة , شعبة الامتحانات ,مخابر الانترنت)
+    name : اوقات بدء الدوام (الشؤون الطلابية , المكتبة , غرفة المطالعة ,النافذة الواحدة , شعبة الامتحانات ,مخابر الانترنت)
+    steps:
+      - action: utter_uni_office_work
+
+  pep_work_loc:
+  description:  السؤال عن مكان تقديم احد المستندات التالية(اعتراض على القسم العملي او النظري لمادة دراسية)
+  name: مكان تقديم المستندات التالية(اعتراض على القسم العملي او النظري لمادة دراسية)
+  steps:
+    - action: utter_pep_work_loc
+  
+  Auditorium_loc:
+    description: السؤال عن موقع مدرج جامعي معين
+    name : موقع مدرج جامعي معين 
+    steps:
+      - collect: Auditorium_num
+        description: رقم يحدد المدرج
+        ask_before_filling: true
+        utter: utter_ask_Auditorium_num
+      - action: action_suitable_link
+      - action: utter_resp_link
+
+
+  
+
+#################################################
+
+
+
+  repo_loc:
+    description: السؤال عن مكان المستودع 
+    nlu_trigger:
+      - intent:
+          name: repo_loc
+          confidence_threshold: 0.8  # threshold value, optional
+        steps:
+          - action: utter_repo_loc
+
+
+  party_meeting:
+    description:  ما هو الاجتماع الحزبي
+    nlu_trigger:
+      - intent:
+          name: party_meeting
+          confidence_threshold: 0.8  # threshold value, optional
+        steps:
+          - action: utter_party_meeting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  tsgel_moz_incu:
+  description: سؤال عن موعد بدء او انتهاء تثبيت التسجيل (عن طريق الدفع) في الجامعة
+  name: موعد التسجيل الموازي
+  steps:
+    - action: utter_tsgel_moz
+
+  tsgel_hou:
+    description: سؤال عن موعد بدء او انتهاء التسجيل على السكن الطلابي في الجامعة
+    name: موعد تسجيل السكن
+    steps:
+      - action: utter_tsgel_hou
+
+  tsgel_hou_pep: 
+    description:  سؤال عن الاوراق المطلوبة للتسجيل على السكن الجامعي
+    name: اوراق تسجيل السكن 
+    steps:
+      - action: utter_tsgel_hou_pep
+
+  tsgel_trade:
+    description: ّسؤال عن موعد صدور قوائم التسجيل المباشر للطلاب الأوائل في الباكالوريوس المهني
+    name: قوائم تسجيل أوائل المهنيّ
+    steps:
+      - action: utter_tsgel_trade
+
+  
+  tsgel_live:
+    description:  سؤال عن موعد بدء او انتهاء تسجيل المباشر في الجامعة
+    name: التسجيل المباشر
+    steps:
+      - action: utter_tsgel_live
+
+  tsgel_gen_sy_no:
+    description: سؤال عن موعد بدء او انتهاء التسجيل للطالب السوري غير المقيم في القطر العربي السوري
+    steps:
+      - action: utter_tsgel_sy_no
+
+  tsgel_stop_pep:
+    description: سؤال عن الاوراق المطلوبة لأيقاف للتسجيل في الجامعة (بشكل مؤقت)
+    steps:
+      - action: utter_tsgel_stop_pep
+  
+
+  Ph_link:
+    description: طلب رابط مجموعة (غروب) مادة الفيزياء على منصة الفيسبوك او التلغرام
+    name : رابط الفيزياء
+    steps:
+      - action: utter_Ph_link
+
+  circut_link:
+    description: طلب رابط مجموعة (غروب) مادة الدارات الكهربائية على منصة الفيسبوك او التلغرام
+    name : رابط الدارات الكهربائية
+    steps:
+      - action: utter_circut_link
+
+  Rbcs_arc_link:
+    description: طلب رابط الأرشيف (السنوات السابقة) لفريق الكريات الحمراء (الاربسيز Rbcs )
+    name : رابط ارشيف الاربسيز
+    steps:
+      - action: utter_Rbcs_arc__link
+# في لاكتر من حدا
+  tele_group_link:
+    description: طلب رابط مجموعة التلغرام لطلاب السنة الأولى
+    name : رابط التلغرام لطلاب السنة الأولى
+    steps:
+      - action: utter_tele_group_link
+
+  stud_loan:
+    description: الاسئلة والاستفسارات حول القروض الطلابية (الاوراق ,الاجراءات, الشروط)
+    name : القرض الطلابي
+    steps:
+      - action: action_trigger_search
+
+# في اسئلة عن دوام العملي و النظري وشغلات الها علاقة بالسنة الاولى
+  doam_start_date:
+    description: سؤال عن موعد بدء الدوام الجامعي لكافة السنوات الدراسية
+    name : موعد بدء الدوام
+    steps:
+      - action: utter_doam_start_date
+
+  uni_office_work:
+    description:   سؤال عن اوقات بدء الدوام في المكاتب الادارية في الجامعة (الشؤون الطلابية , المكتبة , غرفة المطالعة ,النافذة الواحدة , شعبة الامتحانات ,مخابر الانترنت)
+    name : اوقات بدء الدوام (الشؤون الطلابية , المكتبة , غرفة المطالعة ,النافذة الواحدة , شعبة الامتحانات ,مخابر الانترنت)
+    steps:
+      - action: utter_uni_office_work
+
+  pep_work_loc:
+  description:  السؤال عن مكان تقديم احد المستندات التالية(اعتراض على القسم العملي او النظري لمادة دراسية)
+  name: مكان تقديم المستندات التالية(اعتراض على القسم العملي او النظري لمادة دراسية)
+  steps:
+    - action: utter_pep_work_loc
+  
+  Auditorium_loc:
+    description: السؤال عن موقع مدرج جامعي معين
+    name : موقع مدرج جامعي معين 
+    steps:
+      - collect: Auditorium_num
+        description: رقم يحدد المدرج
+        ask_before_filling: true
+        next:
+          - if: (slots.Auditorium_num =22 or slots.Auditorium_num =23 or slots.Auditorium_num =21)
+            then:                     
+              - action: utter_third_floor
+                next: END
+          - if: (slots.Auditorium_num =14 or slots.Auditorium_num =16 or slots.Auditorium_num =15)
+            then:                     
+              - action: utter_second_floor
+                next: END
+          - if: (slots.Auditorium_num =1 or slots.Auditorium_num =2 or slots.Auditorium_num =3)
+            then:                     
+              - action: utter_first_floor
+                next: END
+          - else:
+            - action: utter_no_Auditorium
+              next: END
+
+
+  
+
+#################################################
+
+
+
+  repo_loc:
+    description: السؤال عن مكان المستودع 
+    nlu_trigger:
+      - intent:
+          name: repo_loc
+          confidence_threshold: 0.8  # threshold value, optional
+        steps:
+          - action: utter_repo_loc
+
+
+  party_meeting:
+    description:  ما هو الاجتماع الحزبي
+    nlu_trigger:
+      - intent:
+          name: party_meeting
+          confidence_threshold: 0.8  # threshold value, optional
+        steps:
+          - action: utter_party_meeting
