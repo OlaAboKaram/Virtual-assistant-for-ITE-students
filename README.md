@@ -1,12 +1,12 @@
-#Virtual-assistant-for-ITE-students
+# Virtual-assistant-for-ITE-students
 
-#Project Description
+# Project Description
 
 This project aims to create a comprehensive system to assist students in the Faculty of Informatics Engineering at Damascus University. The system is designed to enhance the quality of services provided to students, facilitating the interaction between students and the faculty by utilizing a virtual assistant capable of handling various inquiries and administrative tasks.
 
 The virtual assistant allows students to easily obtain information related to administrative processes, exam schedules, academic support, and more. It helps students navigate their academic journey more efficiently by providing real-time responses and streamlined services.
 
-#Key Features
+# Key Features
 
 1-Querying Required Documents: Information on administrative document requirements.
 
@@ -22,7 +22,7 @@ The virtual assistant allows students to easily obtain information related to ad
 
 7-Interactive User Experience: Ensures a friendly, conversational interface.
 
-#Results and Discussion
+# Results and Discussion
 
 Efficiency: The system achieves an 80% success rate in addressing student inquiries.
 
